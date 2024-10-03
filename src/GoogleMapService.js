@@ -26,7 +26,8 @@ class GoogleMapService extends MapServiceContract {
       this.map = new Map( domElement, {
         center: center,
         zoom: 13,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapId: 'ILCMap'
       });
     });
   }
