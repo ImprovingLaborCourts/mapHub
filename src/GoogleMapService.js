@@ -1,7 +1,5 @@
 import { MapServiceContract } from './MapServiceContract.js'
 import { Loader } from "@googlemaps/js-api-loader";
-/* import { useAppStore } from '@/store/app.js';
-const { settings } = useAppStore() */
 
 class GoogleMapService extends MapServiceContract {
 
@@ -36,15 +34,15 @@ class GoogleMapService extends MapServiceContract {
   async placeMarker(coordinates) {
     return this.loader.load().then(async () => {
       const { LatLng } = await google.maps.importLibrary("core");
-      const { Marker } = await google.maps.importLibrary("marker");
+      const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
       let place = new LatLng(coordinates.lat,coordinates.lng);
       if(this.marker==null){
-        this.marker = new Marker({
+        this.marker = new AdvancedMarkerElement({
           draggable: true
         });
         this.map.addListener('click', (event) => {
-          this.marker.setPosition(event.latLng);
+          this.marker.position = event.latLng;
           this.latitude.value = event.latLng.lat()
           this.longitude.value = event.latLng.lng()
         });
@@ -54,8 +52,8 @@ class GoogleMapService extends MapServiceContract {
         });
       }
 
-      this.marker.setPosition(place)
-      this.marker.setMap(this.map)
+      this.marker.position = place
+      this.marker.map = this.map
 
       this.map.setCenter(place)
       this.map.setZoom(17)
@@ -70,7 +68,7 @@ class GoogleMapService extends MapServiceContract {
       this.latitude.value = lat
       this.longitude.value = lng
 
-      this.marker.setPosition(place);
+      this.marker.position = place;
       this.map.setCenter(place)
       this.map.setZoom(17)
     });
