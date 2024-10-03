@@ -91,11 +91,11 @@ una vez agregado el repositorio público se detallan casos específicos:
 ### Instalar la libreria
 usando npm:
 ```sh
-npm install -S @improvingLaborCourts/mapHub
+npm install -S https://github.com/ImprovingLaborCourts/mapHub
 ```
 usando yarn
 ```sh
-npm add -S @improvingLaborCourts/mapHub
+npm add -S https://github.com/ImprovingLaborCourts/mapHub
 ```
 ## Uso
 1. Importar la liberia
@@ -104,7 +104,7 @@ import { createMapService } from '@improvingLaborCourts/mapHub'
 ```
 2. Crear un servicio de mapa con el tipo y la key
 ```js
-service = createGeocodeService(
+service = createMapService(
     'hereMap', //'openStreetMap' || 'googleMap' || 'radarMap' || 'mapBox'
      key
 )
@@ -113,10 +113,10 @@ service = createGeocodeService(
 ```js
 service.initializeMap(
     document.getElementById('mapa'), //this.$refs.mapa || mapa.value
-    { lng: -96.73917, lat: 17.01332 }
+    { lng: -102.552784, lat: 23.634501 }
 )
 ```
 4. Colocar el marcador, esto también habilita los eventos relacionados con el marcador
 ```js
-service.placeMarker({ lng: -96.73917, lat: 17.01332 })
+service.placeMarker({ lng: -102.552784, lat: 23.634501 })
 ```
