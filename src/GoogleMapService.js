@@ -40,7 +40,8 @@ class GoogleMapService extends MapServiceContract {
       let place = new LatLng(coordinates.lat,coordinates.lng);
       if(this.marker==null){
         this.marker = new AdvancedMarkerElement({
-          draggable: true
+          gmpDraggable: true,
+          title: 'Ubicación del domicilio'
         });
         this.map.addListener('click', (event) => {
           this.marker.position = event.latLng;
