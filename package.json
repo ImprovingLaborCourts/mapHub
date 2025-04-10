@@ -1,6 +1,6 @@
 {
   "name": "@improvingLaborCourts/mapHub",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Multi map service interface",
   "main": "MapServiceFactory.js",
   "author": "Raciel Jonathan Marquez Mijangos",
