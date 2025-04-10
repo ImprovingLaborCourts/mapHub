@@ -9,7 +9,7 @@ class OpenStreetMapServiceContract extends MapServiceContract {
   latitude
   longitude
 
-  constructor(refToLatitude, refToLongitude) {
+  constructor(key, refToLatitude, refToLongitude) {
     super()
     this.latitude = refToLatitude
     this.longitude = refToLongitude
